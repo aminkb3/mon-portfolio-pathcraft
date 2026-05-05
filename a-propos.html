@@ -1,1 +1,48 @@
-<script src="https://cdn.tailwindcss.com"></script>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>PathCraft - À propos</title>
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-white shadow-md p-4">
+        <div class="container mx-auto flex justify-between items-center text-blue-600 font-bold">
+            <a href="index.html">PathCraft</a>
+            <div class="space-x-6 text-gray-800 font-normal">
+                <a href="index.html">Accueil</a>
+                <a href="a-propos.html" class="text-blue-600 font-semibold">À propos</a>
+                <a href="portfolio.html">Portfolio</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto py-12 px-4 max-w-4xl">
+        <div class="flex flex-col md:flex-row items-center gap-8 mb-12">
+            <div class="w-48 h-48 bg-gray-300 rounded-full flex items-center justify-center text-gray-500">Photo</div>
+            <div>
+                <h2 class="text-3xl font-bold mb-4">À propos de moi</h2>
+                <p class="text-gray-600 leading-relaxed">Ceci est une courte bio générique. Je suis étudiant à l'ETNA et je construis ce portfolio pour présenter mon parcours et mes compétences techniques.</p>
+            </div>
+        </div>
+
+        <!-- Compétences (Progress Bars) -->
+        <h3 class="text-2xl font-bold mb-6">Mes Compétences</h3>
+        <div class="space-y-6">
+            <div>
+                <div class="flex justify-between mb-1"><span class="font-bold">HTML/CSS</span><span>90%</span></div>
+                <div class="w-full bg-gray-200 rounded-full h-4"><div class="bg-blue-600 h-4 rounded-full" style="width: 90%"></div></div>
+            </div>
+            <div>
+                <div class="flex justify-between mb-1"><span class="font-bold">JavaScript</span><span>70%</span></div>
+                <div class="w-full bg-gray-200 rounded-full h-4"><div class="bg-yellow-500 h-4 rounded-full" style="width: 70%"></div></div>
+            </div>
+            <div>
+                <div class="flex justify-between mb-1"><span class="font-bold">Tailwind CSS</span><span>80%</span></div>
+                <div class="w-full bg-gray-200 rounded-full h-4"><div class="bg-teal-500 h-4 rounded-full" style="width: 80%"></div></div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
