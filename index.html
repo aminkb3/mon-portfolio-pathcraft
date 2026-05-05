@@ -4,40 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>PathCraft - Accueil</title>
+    <title>Amin Kharbach | Administrateur Cybersécurité</title>
 </head>
-<body class="bg-gray-50 text-gray-800">
-    <!-- Navbar -->
-    <nav class="bg-white shadow-md p-4 sticky top-0 z-50">
+<body class="bg-slate-900 text-white font-mono min-h-screen flex flex-col">
+
+    <!-- Navigation Simple -->
+    <nav class="p-6">
         <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-xl font-bold text-blue-600">PathCraft</h1>
-            <div class="space-x-6">
-                <a href="index.html" class="hover:text-blue-600 font-semibold">Accueil</a>
-                <a href="a-propos.html" class="hover:text-blue-600">À propos</a>
-                <a href="portfolio.html" class="hover:text-blue-600">Portfolio</a>
+            <span class="text-blue-400 font-bold text-xl tracking-tighter">AK_PORTFOLIO</span>
+            <div class="space-x-6 text-sm">
+                <a href="index.html" class="text-blue-400">01_Accueil</a>
+                <a href="a-propos.html" class="hover:text-blue-400 transition">02_Parcours</a>
+                <a href="portfolio.html" class="hover:text-blue-400 transition">03_Projets</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="bg-blue-600 text-white py-20 px-4 text-center">
-        <h2 class="text-4xl md:text-6xl font-bold mb-4">Bienvenue sur mon Portfolio</h2>
-        <p class="text-xl mb-8">Développeur Web en herbe | Passionné par la création</p>
-        <a href="#projets" class="bg-white text-blue-600 px-6 py-3 rounded-full font-bold hover:bg-gray-100">Voir mes projets</a>
-    </header>
+    <!-- Hero Section Simple -->
+    <main class="flex-grow flex items-center">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl">
+                <p class="text-blue-400 mb-2">Bonjour, je suis</p>
+                <h1 class="text-5xl md:text-7xl font-bold mb-4">Amin Kharbach</h1>
+                <h2 class="text-2xl md:text-3xl text-slate-400 mb-8">
+                    Administrateur Réseaux & Cybersécurité
+                </h2>
+                
+                <p class="text-slate-400 text-lg mb-10 leading-relaxed max-w-xl">
+                    Étudiant à l'ETNA spécialisé dans la sécurisation d'infrastructures hybrides. 
+                    Je construis des systèmes performants et résilients.
+                </p>
 
-    <!-- Aperçus (Blocks/Cards) -->
-    <section class="container mx-auto py-16 px-4 grid md:grid-cols-2 gap-8">
-        <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-blue-600">
-            <h3 class="text-2xl font-bold mb-4">Mon Parcours</h3>
-            <p class="mb-6 text-gray-600">Découvrez qui je suis, mes compétences et mes aspirations professionnelles.</p>
-            <a href="a-propos.html" class="text-blue-600 font-bold hover:underline">En savoir plus →</a>
+                <!-- Boutons d'action -->
+                <div class="flex flex-wrap gap-4">
+                    <!-- Lien vers ta page Portfolio interne -->
+                    <a href="portfolio.html" class="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded transition duration-300">
+                        Consulter mes projets
+                    </a>
+                    
+                    <!-- Lien vers ton LinkedIn -->
+                    <a href="https://www.linkedin.com/in/amin-kharbach-25464b27b/" target="_blank" class="px-8 py-3 border border-blue-600 text-blue-400 hover:bg-blue-600/10 font-bold rounded transition duration-300 flex items-center">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        Mon LinkedIn
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-green-500">
-            <h3 class="text-2xl font-bold mb-4">Mes Réalisations</h3>
-            <p class="mb-6 text-gray-600">Explorez les projets sur lesquels j'ai travaillé durant ma formation.</p>
-            <a href="portfolio.html" class="text-blue-600 font-bold hover:underline">Voir le portfolio →</a>
-        </div>
-    </section>
+    </main>
+
+    <!-- Footer Simple -->
+    <footer class="p-6 text-center text-slate-500 text-xs">
+        <p>© 2024 Amin Kharbach - Étudiant ETNA - Bachelor Cybersécurité</p>
+    </footer>
+
 </body>
 </html>
