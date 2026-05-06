@@ -7,10 +7,32 @@
     <title>Amin Kharbach | Portfolio Interactif</title>
     <style>
         /* Styles pour le jeu */
-        .game-map { background-image: radial-gradient(#166534 1px, transparent 1px); background-size: 20px 20px; }
-        .pixel-border { box-shadow: inset 0 0 0 4px rgba(255,255,255,0.2); }
-        .zone-interactive { transition: all 0.2s; }
-        .zone-interactive:hover { filter: brightness(1.2); }
+        .game-map { 
+            background-color: #14532d; /* Vert gazon foncé */
+            background-image: radial-gradient(#166534 2px, transparent 2px); 
+            background-size: 30px 30px; 
+        }
+        .route-horizontale {
+            background-image: linear-gradient(90deg, transparent 50%, rgba(255,255,255,0.5) 50%);
+            background-size: 40px 4px;
+            background-position: center;
+            background-repeat: repeat-x;
+        }
+        .route-verticale {
+            background-image: linear-gradient(0deg, transparent 50%, rgba(255,255,255,0.5) 50%);
+            background-size: 4px 40px;
+            background-position: center;
+            background-repeat: repeat-y;
+        }
+        .batiment-3d {
+            box-shadow: 0 10px 0 #0f172a, 0 15px 20px rgba(0,0,0,0.5);
+            transition: all 0.2s;
+        }
+        .batiment-3d:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 0 #0f172a, 0 20px 25px rgba(0,0,0,0.6);
+            filter: brightness(1.1);
+        }
     </style>
 </head>
 <body class="bg-slate-900 text-white font-mono overflow-hidden select-none">
@@ -37,35 +59,52 @@
         <h2 class="text-2xl text-blue-400 animate-pulse">Génération du monde...</h2>
     </section>
 
-    <section id="screen-game" class="hidden w-full h-screen bg-green-800 game-map relative">
-        <div class="absolute top-4 left-4 bg-slate-900/80 p-4 rounded text-sm z-50 border border-slate-700">
-            <p class="text-blue-400 font-bold">Joueur : Amin Kharbach</p>
-            <p>Utilisez <kbd class="bg-slate-700 px-1 rounded">Z</kbd><kbd class="bg-slate-700 px-1 rounded">Q</kbd><kbd class="bg-slate-700 px-1 rounded">S</kbd><kbd class="bg-slate-700 px-1 rounded">D</kbd> ou les flèches pour vous déplacer.</p>
+    <section id="screen-game" class="hidden w-full h-screen game-map relative overflow-hidden">
+        
+        <div class="absolute top-4 left-4 bg-slate-900/90 p-4 rounded text-sm z-50 border border-slate-700 shadow-lg">
+            <p class="text-blue-400 font-bold mb-1">Joueur : K. Amin</p>
+            <p class="text-slate-300">Utilisez <kbd class="bg-slate-700 px-2 py-1 rounded">Z Q S D</kbd> pour explorer le campus.</p>
         </div>
 
-        <div id="zone-formation" class="zone-interactive absolute top-[10%] left-[10%] w-48 h-32 bg-blue-900 border-4 border-blue-400 flex items-center justify-center rounded-lg shadow-2xl">
-            <span class="font-bold text-center">Centre de<br>Formation<br>(Études)</span>
+        <div class="absolute top-[45%] left-0 w-full h-24 bg-slate-800 border-y-4 border-slate-600 z-0 flex items-center">
+            <div class="w-full h-full route-horizontale"></div>
+        </div>
+        <div class="absolute top-0 left-[35%] w-24 h-full bg-slate-800 border-x-4 border-slate-600 z-0 flex justify-center">
+            <div class="w-full h-full route-verticale"></div>
         </div>
 
-        <div id="zone-musee" class="zone-interactive absolute top-[10%] right-[10%] w-48 h-32 bg-yellow-700 border-4 border-yellow-400 flex items-center justify-center rounded-lg shadow-2xl">
-            <span class="font-bold text-center">Musée du<br>Club<br>(Projets)</span>
+        <div id="zone-formation" class="absolute top-[10%] left-[10%] w-56 h-40 bg-blue-800 border-4 border-blue-400 flex flex-col items-center justify-center rounded-sm z-10 batiment-3d cursor-pointer">
+            <div class="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
+            <span class="text-3xl mb-2">🎓</span>
+            <span class="font-bold text-center text-white drop-shadow-md relative z-10">Centre de<br>Formation</span>
         </div>
 
-        <div id="zone-stade" class="zone-interactive absolute top-[40%] left-[50%] -translate-x-1/2 w-96 h-64 bg-green-600 border-8 border-white rounded-full flex flex-col items-center justify-center pixel-border">
-            <div class="w-20 h-20 border-4 border-white rounded-full flex items-center justify-center mb-4">⚽</div>
-            <span class="font-bold text-xl drop-shadow-md">Le Stade (Expériences)</span>
+        <div id="zone-musee" class="absolute top-[10%] right-[10%] w-56 h-40 bg-amber-700 border-4 border-amber-400 flex flex-col items-center justify-center rounded-sm z-10 batiment-3d cursor-pointer">
+            <div class="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
+            <span class="text-3xl mb-2">🏆</span>
+            <span class="font-bold text-center text-white drop-shadow-md relative z-10">Musée du<br>Club</span>
+        </div>
+
+        <div id="zone-stade" class="absolute top-[55%] left-[60%] w-[400px] h-[250px] bg-green-600 border-8 border-slate-300 rounded-[100px] flex flex-col items-center justify-center z-10 batiment-3d cursor-pointer" style="box-shadow: inset 0 0 50px rgba(0,0,0,0.5), 0 10px 0 #94a3b8;">
+            <div class="w-[80%] h-[70%] border-2 border-white/50 rounded-[60px] flex items-center justify-center relative">
+                <div class="w-16 h-16 border-2 border-white/50 rounded-full flex items-center justify-center">⚽</div>
+            </div>
+            <span class="font-bold text-xl drop-shadow-md absolute top-4">Le Stade (Expériences)</span>
             
-            <div id="zone-vestiaire" class="zone-interactive absolute bottom-4 w-32 h-12 bg-slate-800 border-2 border-slate-400 flex items-center justify-center rounded">
-                <span class="text-xs font-bold">Le Vestiaire<br>(Compétences)</span>
+            <div id="zone-vestiaire" class="absolute -left-10 top-[40%] w-24 h-16 bg-slate-700 border-4 border-slate-400 flex flex-col items-center justify-center rounded shadow-lg hover:bg-slate-600 transition-colors">
+                <span class="text-xs font-bold text-center">Vestiaire<br>(Skills)</span>
             </div>
         </div>
 
-        <div id="zone-mixte" class="zone-interactive absolute bottom-[10%] left-[20%] w-40 h-24 bg-purple-900 border-4 border-purple-400 flex items-center justify-center rounded-lg shadow-2xl">
-            <span class="font-bold text-center">Zone Mixte<br>(Contact)</span>
+        <div id="zone-mixte" class="absolute bottom-[10%] left-[10%] w-48 h-32 bg-purple-800 border-4 border-purple-400 flex flex-col items-center justify-center rounded-sm z-10 batiment-3d cursor-pointer">
+            <div class="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
+            <span class="text-3xl mb-2">🎤</span>
+            <span class="font-bold text-center text-white drop-shadow-md relative z-10">Zone Mixte<br>(Contact)</span>
         </div>
 
-        <div id="player" class="absolute w-10 h-10 bg-red-500 border-2 border-white rounded-full shadow-[0_0_15px_rgba(255,0,0,0.8)] z-40 flex items-center justify-center text-xl transition-transform">
-            🏃
+        <div id="player" class="absolute w-12 h-16 z-40 transition-transform flex items-center justify-center drop-shadow-xl" style="left: 100px; top: 100px;">
+            <img id="avatar-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-iv/heartgold-soulsilver/25.png" alt="Avatar" class="w-full h-full object-contain filter drop-shadow-md">
+            <div class="absolute -bottom-2 w-8 h-3 bg-black/40 rounded-full blur-[2px] -z-10"></div>
         </div>
     </section>
 
