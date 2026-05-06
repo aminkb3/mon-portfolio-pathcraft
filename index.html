@@ -4,143 +4,209 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Amin Kharbach | Portfolio</title>
+    <title>Amin Kharbach | Portfolio Interactif</title>
     <style>
-        .perspective-1000 { perspective: 1000px; }
-        .preserve-3d { transform-style: preserve-3d; }
-        .hover\:rotate-x-12:hover { transform: rotateX(15deg); }
-        .hover\:rotate-y-12:hover { transform: rotateY(15deg); }
+        /* Styles pour le jeu */
+        .game-map { background-image: radial-gradient(#166534 1px, transparent 1px); background-size: 20px 20px; }
+        .pixel-border { box-shadow: inset 0 0 0 4px rgba(255,255,255,0.2); }
+        .zone-interactive { transition: all 0.2s; }
+        .zone-interactive:hover { filter: brightness(1.2); }
     </style>
 </head>
-<body class="bg-slate-900 text-white font-mono scroll-smooth overflow-x-hidden">
+<body class="bg-slate-900 text-white font-mono overflow-hidden select-none">
 
-    <nav class="fixed right-8 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col gap-6">
-        <a href="#accueil" class="w-3 h-3 rounded-full bg-blue-600 border border-blue-400 hover:scale-150 transition-all shadow-[0_0_10px_rgba(37,99,235,0.8)]" title="L'Entrée du Stade"></a>
-        <a href="#vestiaire" class="w-3 h-3 rounded-full bg-slate-700 border border-slate-500 hover:scale-150 transition-all hover:bg-blue-400" title="Le Vestiaire (Compétences)"></a>
-        <a href="#stade" class="w-3 h-3 rounded-full bg-slate-700 border border-slate-500 hover:scale-150 transition-all hover:bg-blue-400" title="Le Terrain (Expériences)"></a>
-        <a href="#musee" class="w-3 h-3 rounded-full bg-slate-700 border border-slate-500 hover:scale-150 transition-all hover:bg-blue-400" title="Salle des Trophées (Projets)"></a>
-    </nav>
-
-    <section id="accueil" class="min-h-screen flex flex-col items-center justify-center relative p-6">
+    <section id="screen-accueil" class="w-full h-screen flex flex-col items-center justify-center relative">
         <div class="absolute top-6 left-6">
             <span class="text-blue-400 font-bold text-xl tracking-tighter">AK_PORTFOLIO</span>
         </div>
-
-        <div class="container mx-auto text-center flex flex-col items-center">
-            <div class="mb-8 perspective-1000">
-                <div class="w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-blue-600 p-1 
-                            transition-all duration-500 ease-out transform 
-                            hover:rotate-x-12 hover:rotate-y-12 hover:scale-110 hover:shadow-2xl hover:shadow-blue-500/50 
-                            cursor-pointer preserve-3d">
-                    <img src="profil.png" alt="Amin Kharbach" class="w-full h-full rounded-full object-cover bg-slate-800 shadow-inner">
-                </div>
+        <div class="mb-8">
+            <div class="w-40 h-40 rounded-full border-4 border-blue-600 p-1">
+                <img src="profil.png" alt="Amin Kharbach" class="w-full h-full rounded-full object-cover">
             </div>
+        </div>
+        <h1 class="text-5xl font-bold mb-4 tracking-tight uppercase">KHARBACH AMIN</h1>
+        <h2 class="text-2xl text-blue-400 mb-8 font-light">Administrateur Réseaux & Cybersécurité</h2>
+        
+        <button id="btn-start" class="px-10 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded shadow-lg shadow-blue-900/50 hover:scale-105 transition-all">
+            Entrer sur le terrain
+        </button>
+    </section>
 
-            <h1 class="text-5xl md:text-7xl font-bold mb-4 tracking-tight uppercase">KHARBACH AMIN</h1>
-            <h2 class="text-2xl md:text-3xl text-blue-400 mb-8 font-light">
-                Administrateur Réseaux & Cybersécurité
-            </h2>
+    <section id="screen-loading" class="hidden w-full h-screen flex flex-col items-center justify-center bg-slate-900">
+        <div class="animate-spin text-6xl mb-4">⚽</div>
+        <h2 class="text-2xl text-blue-400 animate-pulse">Génération du monde...</h2>
+    </section>
 
-            <div class="flex flex-col md:flex-row gap-4 justify-center items-center mt-4">
-                <a href="#vestiaire" class="w-full md:w-auto px-10 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded transition duration-300 shadow-lg shadow-blue-900/20 animate-bounce">
-                    Entrer sur le terrain
-                </a>
+    <section id="screen-game" class="hidden w-full h-screen bg-green-800 game-map relative">
+        <div class="absolute top-4 left-4 bg-slate-900/80 p-4 rounded text-sm z-50 border border-slate-700">
+            <p class="text-blue-400 font-bold">Joueur : Amin Kharbach</p>
+            <p>Utilisez <kbd class="bg-slate-700 px-1 rounded">Z</kbd><kbd class="bg-slate-700 px-1 rounded">Q</kbd><kbd class="bg-slate-700 px-1 rounded">S</kbd><kbd class="bg-slate-700 px-1 rounded">D</kbd> ou les flèches pour vous déplacer.</p>
+        </div>
+
+        <div id="zone-formation" class="zone-interactive absolute top-[10%] left-[10%] w-48 h-32 bg-blue-900 border-4 border-blue-400 flex items-center justify-center rounded-lg shadow-2xl">
+            <span class="font-bold text-center">Centre de<br>Formation<br>(Études)</span>
+        </div>
+
+        <div id="zone-musee" class="zone-interactive absolute top-[10%] right-[10%] w-48 h-32 bg-yellow-700 border-4 border-yellow-400 flex items-center justify-center rounded-lg shadow-2xl">
+            <span class="font-bold text-center">Musée du<br>Club<br>(Projets)</span>
+        </div>
+
+        <div id="zone-stade" class="zone-interactive absolute top-[40%] left-[50%] -translate-x-1/2 w-96 h-64 bg-green-600 border-8 border-white rounded-full flex flex-col items-center justify-center pixel-border">
+            <div class="w-20 h-20 border-4 border-white rounded-full flex items-center justify-center mb-4">⚽</div>
+            <span class="font-bold text-xl drop-shadow-md">Le Stade (Expériences)</span>
+            
+            <div id="zone-vestiaire" class="zone-interactive absolute bottom-4 w-32 h-12 bg-slate-800 border-2 border-slate-400 flex items-center justify-center rounded">
+                <span class="text-xs font-bold">Le Vestiaire<br>(Compétences)</span>
             </div>
+        </div>
+
+        <div id="zone-mixte" class="zone-interactive absolute bottom-[10%] left-[20%] w-40 h-24 bg-purple-900 border-4 border-purple-400 flex items-center justify-center rounded-lg shadow-2xl">
+            <span class="font-bold text-center">Zone Mixte<br>(Contact)</span>
+        </div>
+
+        <div id="player" class="absolute w-10 h-10 bg-red-500 border-2 border-white rounded-full shadow-[0_0_15px_rgba(255,0,0,0.8)] z-40 flex items-center justify-center text-xl transition-transform">
+            🏃
         </div>
     </section>
 
-    <section id="vestiaire" class="min-h-screen flex flex-col items-center justify-center p-6 bg-slate-900 relative">
-        <div class="text-center w-full mb-12">
-            <h2 class="text-4xl font-bold text-white tracking-widest uppercase" style="font-family: 'Courier New', Courier, monospace; text-shadow: 2px 2px 0 #3b82f6;">
-                Vestiaire de l'Équipe
-            </h2>
-            <p class="text-blue-400 mt-2">Mes équipements techniques & compétences</p>
+    <div id="modal-vestiaire" class="hidden fixed inset-0 bg-black/80 z-[100] flex items-center justify-center p-6 backdrop-blur-sm">
+        <div class="bg-slate-800 border-2 border-blue-500 p-8 rounded-lg max-w-2xl w-full">
+            <h2 class="text-3xl font-bold text-blue-400 mb-6">Vestiaire (Stack Technique)</h2>
+            <ul class="space-y-4 mb-8">
+                <li><strong class="text-white">Systèmes :</strong> Windows Server (AD, DNS), Linux (Debian, Ubuntu)</li>
+                <li><strong class="text-white">Réseaux :</strong> TCP/IP, DNS, HTTP, TLS, VLANs</li>
+                <li><strong class="text-white">Cyber :</strong> ISO 27001, ANSSI, Zero Trust</li>
+                <li><strong class="text-white">Scripting :</strong> Python, PowerShell, Bash</li>
+            </ul>
+            <button class="close-modal bg-slate-700 hover:bg-slate-600 px-6 py-2 rounded font-bold">Retourner sur le terrain</button>
         </div>
+    </div>
 
-        <div class="bg-slate-800 border-4 border-slate-700 p-8 rounded-lg shadow-2xl max-w-5xl w-full relative overflow-hidden">
-            <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(45deg, #000 25%, transparent 25%, transparent 75%, #000 75%, #000), repeating-linear-gradient(45deg, #000 25%, #1e293b 25%, #1e293b 75%, #000 75%, #000); background-position: 0 0, 20px 20px; background-size: 40px 40px;"></div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
-                <div class="group cursor-pointer perspective-1000">
-                    <div class="bg-slate-700 h-64 border-2 border-slate-600 rounded flex flex-col items-center justify-between p-4 transition-all duration-300 transform group-hover:-translate-y-2 group-hover:border-blue-500 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.5)]">
-                        <div class="w-full bg-slate-900 text-center text-xs py-1 text-slate-400 font-bold tracking-widest rounded">CASIER 01</div>
-                        <div class="text-5xl my-4 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all">🎽</div>
-                        <div class="text-center w-full">
-                            <h3 class="text-blue-400 font-bold uppercase text-sm mb-2">Admin. Sys</h3>
-                            <div class="w-full bg-slate-900 h-2 rounded overflow-hidden">
-                                <div class="bg-green-500 h-full w-[85%]"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="group cursor-pointer perspective-1000">
-                    <div class="bg-slate-700 h-64 border-2 border-slate-600 rounded flex flex-col items-center justify-between p-4 transition-all duration-300 transform group-hover:-translate-y-2 group-hover:border-blue-500 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.5)]">
-                        <div class="w-full bg-slate-900 text-center text-xs py-1 text-slate-400 font-bold tracking-widest rounded">CASIER 02</div>
-                        <div class="text-5xl my-4 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all">⚽</div>
-                        <div class="text-center w-full">
-                            <h3 class="text-blue-400 font-bold uppercase text-sm mb-2">Réseaux</h3>
-                            <div class="w-full bg-slate-900 h-2 rounded overflow-hidden">
-                                <div class="bg-blue-500 h-full w-[80%]"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="group cursor-pointer perspective-1000">
-                    <div class="bg-slate-700 h-64 border-2 border-slate-600 rounded flex flex-col items-center justify-between p-4 transition-all duration-300 transform group-hover:-translate-y-2 group-hover:border-blue-500 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.5)]">
-                        <div class="w-full bg-slate-900 text-center text-xs py-1 text-slate-400 font-bold tracking-widest rounded">CASIER 03</div>
-                        <div class="text-5xl my-4 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all">🛡️</div>
-                        <div class="text-center w-full">
-                            <h3 class="text-blue-400 font-bold uppercase text-sm mb-2">Cybersécurité</h3>
-                            <div class="w-full bg-slate-900 h-2 rounded overflow-hidden">
-                                <div class="bg-yellow-500 h-full w-[75%]"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="group cursor-pointer perspective-1000">
-                    <div class="bg-slate-700 h-64 border-2 border-slate-600 rounded flex flex-col items-center justify-between p-4 transition-all duration-300 transform group-hover:-translate-y-2 group-hover:border-blue-500 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.5)]">
-                        <div class="w-full bg-slate-900 text-center text-xs py-1 text-slate-400 font-bold tracking-widest rounded">CASIER 04</div>
-                        <div class="text-5xl my-4 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all">📋</div>
-                        <div class="text-center w-full">
-                            <h3 class="text-blue-400 font-bold uppercase text-sm mb-2">Scripting</h3>
-                            <div class="w-full bg-slate-900 h-2 rounded overflow-hidden">
-                                <div class="bg-red-500 h-full w-[70%]"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div id="modal-stade" class="hidden fixed inset-0 bg-black/80 z-[100] flex items-center justify-center p-6 backdrop-blur-sm">
+        <div class="bg-slate-800 border-2 border-green-500 p-8 rounded-lg max-w-2xl w-full">
+            <h2 class="text-3xl font-bold text-green-400 mb-6">Le Stade (Expériences Pro)</h2>
+            <div class="mb-4">
+                <h3 class="text-xl font-bold text-white">IMVC Entreprise (2024-2025)</h3>
+                <p class="text-slate-400">MCO serveurs/réseaux, gestion AD, configuration de firewalls.</p>
             </div>
-        </div>
-    </section>
-
-    <section id="stade" class="min-h-screen flex items-center justify-center p-6 bg-slate-800/30">
-        <div class="max-w-4xl w-full text-center">
-            <h2 class="text-4xl font-bold text-white tracking-widest uppercase mb-12" style="font-family: 'Courier New', Courier, monospace; text-shadow: 2px 2px 0 #10b981;">
-                Le Stade Olympique (Expériences)
-            </h2>
-            <div class="bg-green-900/20 border-2 border-green-500/50 p-8 rounded-lg text-left">
-                <div class="space-y-8 border-l-2 border-green-500 pl-6">
-                    <div>
-                        <h3 class="text-2xl font-bold text-white">Apprenti BTS SIO — IMVC Entreprise</h3>
-                        <p class="text-green-400 text-sm mb-2">Saison 2024 - 2025 | Beauvais</p>
-                        <p class="text-slate-300">Maintien en condition opérationnelle (MCO), gestion Active Directory et firewalls.</p>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-bold text-white">Technicien — Coelys</h3>
-                        <p class="text-green-400 text-sm mb-2">Saison 2023 - 2024 | Allonne</p>
-                        <p class="text-slate-300">Automatisation de rapports et sensibilisation à la cybersécurité.</p>
-                    </div>
-                </div>
+            <div class="mb-8">
+                <h3 class="text-xl font-bold text-white">Coelys (2023-2024)</h3>
+                <p class="text-slate-400">Automatisation de rapports et sensibilisation à la cybersécurité.</p>
             </div>
+            <button class="close-modal bg-slate-700 hover:bg-slate-600 px-6 py-2 rounded font-bold">Retourner sur le terrain</button>
         </div>
-    </section>
+    </div>
 
-    <footer class="p-6 text-center text-slate-600 text-[10px] uppercase tracking-widest bg-slate-900">
-        © 2026 Amin Kharbach — Étudiant ETNA — Bachelor Cybersécurité
-    </footer>
+    <script>
+        // 1. GESTION DES ÉCRANS
+        const btnStart = document.getElementById('btn-start');
+        const screenAccueil = document.getElementById('screen-accueil');
+        const screenLoading = document.getElementById('screen-loading');
+        const screenGame = document.getElementById('screen-game');
 
+        btnStart.addEventListener('click', () => {
+            // Cacher l'accueil, montrer le chargement
+            screenAccueil.classList.add('hidden');
+            screenLoading.classList.remove('hidden');
+
+            // Attendre 2 secondes (simulation de chargement)
+            setTimeout(() => {
+                screenLoading.classList.add('hidden');
+                screenGame.classList.remove('hidden');
+                startGame(); // Lancer la boucle de jeu
+            }, 2000);
+        });
+
+        // 2. MOTEUR DE DÉPLACEMENT
+        const player = document.getElementById('player');
+        let playerX = 100; // Position X de départ
+        let playerY = 100; // Position Y de départ
+        const speed = 5;   // Vitesse du joueur
+        let keys = {};     // Touches pressées
+        let isModalOpen = false; // Bloquer les déplacements si une fenêtre est ouverte
+
+        // Écouteurs de clavier
+        window.addEventListener('keydown', (e) => { keys[e.key] = true; });
+        window.addEventListener('keyup', (e) => { keys[e.key] = false; });
+
+        function startGame() {
+            // Positionner le joueur au centre initialement
+            playerX = window.innerWidth / 2 - 20;
+            playerY = window.innerHeight / 2 - 20;
+            gameLoop();
+        }
+
+        function gameLoop() {
+            if (!isModalOpen) {
+                // Déplacements (Z/Q/S/D ou Flèches)
+                if (keys['ArrowUp'] || keys['z'] || keys['Z']) playerY -= speed;
+                if (keys['ArrowDown'] || keys['s'] || keys['S']) playerY += speed;
+                if (keys['ArrowLeft'] || keys['q'] || keys['Q']) playerX -= speed;
+                if (keys['ArrowRight'] || keys['d'] || keys['D']) playerX += speed;
+
+                // Empêcher de sortir de l'écran
+                playerX = Math.max(0, Math.min(window.innerWidth - 40, playerX));
+                playerY = Math.max(0, Math.min(window.innerHeight - 40, playerY));
+
+                // Appliquer les positions CSS
+                player.style.left = playerX + 'px';
+                player.style.top = playerY + 'px';
+
+                // Vérifier les collisions avec les zones
+                checkCollisions();
+            }
+            
+            // Reboucler à la prochaine frame (60 FPS)
+            requestAnimationFrame(gameLoop);
+        }
+
+        // 3. SYSTÈME DE COLLISION ET MODALES
+        function isColliding(rect1, rect2) {
+            return !(rect1.right < rect2.left || 
+                     rect1.left > rect2.right || 
+                     rect1.bottom < rect2.top || 
+                     rect1.top > rect2.bottom);
+        }
+
+        function checkCollisions() {
+            const playerRect = player.getBoundingClientRect();
+            
+            // Liste des zones interactives
+            const zones = [
+                { id: 'zone-vestiaire', modal: 'modal-vestiaire' },
+                { id: 'zone-stade', modal: 'modal-stade' },
+                // Tu pourras ajouter zone-formation et zone-musee ici plus tard
+            ];
+
+            // Pour éviter que le grand stade ne bloque le petit vestiaire, on teste le vestiaire en premier
+            for (let zone of zones) {
+                const element = document.getElementById(zone.id);
+                if (!element) continue;
+                
+                const elementRect = element.getBoundingClientRect();
+                
+                if (isColliding(playerRect, elementRect)) {
+                    openModal(zone.modal);
+                    // Reculer le joueur légèrement pour éviter une collision infinie en fermant la modale
+                    playerY += 20; 
+                    break; 
+                }
+            }
+        }
+
+        // Gestion des fenêtres (Modales)
+        function openModal(modalId) {
+            isModalOpen = true; // Met le jeu en pause
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+
+        // Fermer les modales avec les boutons
+        document.querySelectorAll('.close-modal').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.target.closest('div[id^="modal-"]').classList.add('hidden');
+                isModalOpen = false; // Reprendre le jeu
+            });
+        });
+    </script>
 </body>
 </html>
