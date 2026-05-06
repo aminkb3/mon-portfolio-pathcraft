@@ -5,26 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Amin Kharbach | Portfolio</title>
+    <style>
+        .perspective-1000 { perspective: 1000px; }
+        .preserve-3d { transform-style: preserve-3d; }
+        .hover\:rotate-x-12:hover { transform: rotateX(15deg); }
+        .hover\:rotate-y-12:hover { transform: rotateY(15deg); }
+    </style>
 </head>
-<body class="bg-slate-900 text-white font-mono min-h-screen flex flex-col">
+<body class="bg-slate-900 text-white font-mono scroll-smooth overflow-x-hidden">
 
-    <!-- Navigation -->
-    <nav class="p-6 w-full fixed top-0">
-        <div class="container mx-auto flex justify-between items-center">
-            <span class="text-blue-400 font-bold text-xl tracking-tighter">AK_PORTFOLIO</span>
-            <div class="hidden md:flex space-x-6 text-sm">
-                <a href="index.html" class="text-blue-400">Accueil</a>
-                <a href="a-propos.html" class="hover:text-blue-400 transition">A Propos</a>
-                <a href="portfolio.html" class="hover:text-blue-400 transition">Projets</a>
-            </div>
-        </div>
+    <!-- NAVIGATION LATÉRALE (INDICATEURS) -->
+    <nav class="fixed right-8 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col gap-6">
+        <a href="#accueil" class="w-3 h-3 rounded-full bg-blue-600 border border-blue-400 hover:scale-150 transition-all shadow-[0_0_10px_rgba(37,99,235,0.8)]" title="Accueil"></a>
+        <a href="#a-propos" class="w-3 h-3 rounded-full bg-slate-700 border border-slate-500 hover:scale-150 transition-all hover:bg-blue-400" title="À Propos"></a>
+        <a href="#experiences" class="w-3 h-3 rounded-full bg-slate-700 border border-slate-500 hover:scale-150 transition-all hover:bg-blue-400" title="Expériences"></a>
+        <a href="#projets" class="w-3 h-3 rounded-full bg-slate-700 border border-slate-500 hover:scale-150 transition-all hover:bg-blue-400" title="Projets"></a>
     </nav>
 
-    <!-- Contenu Central -->
-    <main class="flex-grow flex items-center justify-center py-20">
-        <div class="container mx-auto px-6 text-center flex flex-col items-center">
-            
-            <!-- Container avec perspective pour l'effet 3D -->
+    <!-- SECTION 0 : ACCUEIL -->
+    <section id="accueil" class="min-h-screen flex flex-col items-center justify-center relative p-6">
+        <!-- Logo en haut à gauche -->
+        <div class="absolute top-6 left-6">
+            <span class="text-blue-400 font-bold text-xl tracking-tighter">AK_PORTFOLIO</span>
+        </div>
+
+        <div class="container mx-auto text-center flex flex-col items-center">
+            <!-- Photo avec effet 3D -->
             <div class="mb-8 perspective-1000">
                 <div class="w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-blue-600 p-1 
                             transition-all duration-500 ease-out transform 
@@ -35,33 +41,106 @@
                 </div>
             </div>
 
-            <h1 class="text-5xl md:text-7xl font-bold mb-4 tracking-tight">KHARBACH AMIN</h1>
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 tracking-tight uppercase">KHARBACH AMIN</h1>
             <h2 class="text-2xl md:text-3xl text-blue-400 mb-8 font-light">
                 Administrateur Réseaux & Cybersécurité
             </h2>
-            
-            <p class="text-slate-400 text-lg mb-10 leading-relaxed max-w-2xl mx-auto">
-                Étudiant à l'ETNA spécialisé dans la sécurisation d'infrastructures hybrides. 
-                Je construis des systèmes performants et résilients.
-            </p>
 
-            <!-- Boutons centrés -->
             <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
-                <a href="portfolio.html" class="w-full md:w-auto px-10 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded transition duration-300 shadow-lg shadow-blue-900/20">
+                <a href="#a-propos" class="w-full md:w-auto px-10 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded transition duration-300 shadow-lg shadow-blue-900/20 animate-bounce">
                     Bienvenue dans mon monde
                 </a>
-                
                 <a href="https://www.linkedin.com/in/amin-kharbach-25464b27b/" target="_blank" class="w-full md:w-auto px-10 py-3 border border-slate-700 text-slate-300 hover:bg-slate-800 font-bold rounded transition duration-300 flex items-center justify-center">
                     <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                    Mon LinkedIn
+                    LinkedIn
                 </a>
             </div>
         </div>
-    </main>
+    </section>
 
-    <!-- Footer -->
-    <footer class="p-6 text-center text-slate-600 text-[10px] uppercase tracking-widest">
-        © 2024 Amin Kharbach — Étudiant ETNA — Bachelor Cybersécurité
+    <!-- SECTION 1 : A PROPOS (WHOAMI) -->
+    <section id="a-propos" class="min-h-screen flex items-center justify-center p-6 bg-slate-800/20">
+        <div class="max-w-4xl w-full">
+            <h2 class="text-3xl font-bold text-blue-500 mb-8">> whoami.sh</h2>
+            <p class="text-lg leading-relaxed text-slate-400 mb-6">
+                Étudiant en Bachelor Cybersécurité à l'ETNA. Passionné par la sécurisation d'infrastructures hybrides (Linux/Windows). 
+                Je maîtrise l'administration systèmes et réseaux avec un fort sens de l'analyse pour garantir la performance IT[cite: 1].
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
+                <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+                    <h3 class="text-blue-400 font-bold mb-4 uppercase text-sm">// Administration_Sys</h3>
+                    <ul class="text-sm space-y-2 text-slate-300">
+                        <li>• Serveurs Windows (AD, DNS, DHCP)[cite: 1]</li>
+                        <li>• Linux (Debian, Ubuntu)[cite: 1]</li>
+                        <li>• Virtualisation VMware & Docker[cite: 1]</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-lg border border-slate-700">
+                    <h3 class="text-blue-400 font-bold mb-4 uppercase text-sm">// Cyber_Network</h3>
+                    <ul class="text-sm space-y-2 text-slate-300">
+                        <li>• Protocoles TCP/IP, DNS, TLS[cite: 1]</li>
+                        <li>• VLANs & Routage[cite: 1]</li>
+                        <li>• Référentiels ANSSI & Zero Trust[cite: 1]</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2 : EXPERIENCES (LOGS) -->
+    <section id="experiences" class="min-h-screen flex items-center justify-center p-6">
+        <div class="max-w-4xl w-full">
+            <h2 class="text-3xl font-bold text-blue-500 mb-12">> logs_experiences.log</h2>
+            <div class="space-y-12 border-l-2 border-blue-600 pl-8 relative">
+                <div class="relative">
+                    <div class="absolute -left-[37px] top-1 w-4 h-4 bg-blue-600 rounded-full border-4 border-slate-900"></div>
+                    <h3 class="text-2xl font-bold text-white">Apprenti BTS SIO — IMVC Entreprise[cite: 1]</h3>
+                    <p class="text-blue-400 text-sm mb-4">Octobre 2024 - Juin 2025 | Beauvais[cite: 1]</p>
+                    <ul class="text-slate-400 text-sm space-y-2">
+                        <li>• Maintien en condition opérationnelle (MCO) du parc serveurs[cite: 1].</li>
+                        <li>• Gestion des droits d'accès et habilitations via Active Directory[cite: 1].</li>
+                        <li>• Sécurisation des flux internes via configuration de firewalls[cite: 1].</li>
+                    </ul>
+                </div>
+                <div class="relative">
+                    <div class="absolute -left-[37px] top-1 w-4 h-4 bg-slate-700 rounded-full border-4 border-slate-900"></div>
+                    <h3 class="text-2xl font-bold text-white">Technicien — Coelys[cite: 1]</h3>
+                    <p class="text-blue-400 text-sm mb-4">Octobre 2023 - Octobre 2024 | Allonne[cite: 1]</p>
+                    <ul class="text-slate-400 text-sm space-y-2">
+                        <li>• Rédaction de procédures techniques et automatisation de rapports[cite: 1].</li>
+                        <li>• Sensibilisation des utilisateurs aux bonnes pratiques de sécurité[cite: 1].</li>
+                        <li>• Développement et maintenance de logiciel[cite: 1].</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3 : PROJETS (BIN) -->
+    <section id="projets" class="min-h-screen flex items-center justify-center p-6 bg-slate-800/20">
+        <div class="max-w-4xl w-full">
+            <h2 class="text-3xl font-bold text-blue-500 mb-12">> /usr/bin/projets</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-slate-800 p-8 rounded-xl border border-blue-900/30 hover:border-blue-500 transition-all group">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-bold group-hover:text-blue-400">Quiz Interactif (Python)[cite: 1]</h3>
+                        <span class="text-[10px] bg-blue-900/50 text-blue-400 px-2 py-1 rounded">PYTHON</span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Développement d'un outil de gestion de données et d'automatisation logique, renforçant mes capacités en scripting[cite: 1].
+                    </p>
+                </div>
+                <div class="bg-slate-800 p-8 rounded-xl border border-blue-900/30 hover:border-blue-500 transition-all group text-slate-500">
+                    <h3 class="text-xl font-bold mb-4">Projet Suivant...</h3>
+                    <p class="text-sm">En cours de développement dans le cadre du Bachelor Cybersécurité à l'ETNA[cite: 1].</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Fixé en bas -->
+    <footer class="p-6 text-center text-slate-600 text-[10px] uppercase tracking-widest bg-slate-900">
+        © 2026 Amin Kharbach — Étudiant ETNA — Bachelor Cybersécurité[cite: 1]
     </footer>
 
 </body>
