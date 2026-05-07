@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Amin Kharbach | Portfolio Cyber-Security v1.5</title>
+    <title>Amin Kharbach | Portfolio Cyber-Security</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap');
         body { font-family: 'Space Grotesk', sans-serif; }
@@ -24,7 +24,6 @@
         }
         .bento-glow:hover::before { opacity: 1; }
 
-        /* Animation d'apparition au scroll */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -35,7 +34,6 @@
             transform: translateY(0);
         }
 
-        /* Animations du Scanner et du Bip */
         @keyframes scanner {
             0% { top: 0%; opacity: 0; }
             50% { opacity: 1; }
@@ -101,7 +99,6 @@
                         <div class="text-blue-500 text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-widest mb-1">
                             Scanner le badge d'accès →
                         </div>
-                        
                         <a href="mon_cv.pdf" download="CV_Amin_Kharbach.pdf" onclick="event.stopPropagation()" class="px-4 py-2 bg-blue-600/20 text-blue-400 border border-blue-600/50 rounded-lg hover:bg-blue-600 hover:text-white transition-all text-xs font-bold uppercase tracking-widest z-10 hover:scale-105 flex items-center gap-2">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                             CV.pdf
@@ -162,7 +159,6 @@
                     
                     <div class="relative pl-8 group cursor-pointer" onclick="toggleStory('story-bachelor')">
                         <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-slate-950 border-2 border-blue-500 group-hover:scale-150 group-hover:bg-blue-500 transition-all"></div>
-                        
                         <div class="md:w-1/2 pr-4">
                             <div class="text-blue-500 font-bold text-xs mb-1 tracking-widest">2025 — 2026 (EN COURS)</div>
                             <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">Bachelor Cybersécurité</h3>
@@ -171,15 +167,12 @@
                                 <span class="animate-pulse w-2 h-2 bg-blue-500 rounded-full inline-block"></span> Cliquer pour décrypter
                             </p>
                         </div>
-
                         <div id="story-bachelor" class="hidden md:absolute md:top-0 md:left-1/2 w-full md:w-1/2 mt-4 md:mt-0">
                             <div class="bg-slate-900/80 border border-blue-500/30 p-4 rounded-2xl backdrop-blur-md shadow-[0_0_20px_rgba(59,130,246,0.1)] flex gap-4 items-start">
                                 <img src="profil.png" alt="Amin" class="w-10 h-10 rounded-full border-2 border-blue-500 object-cover flex-shrink-0">
                                 <div>
                                     <h4 class="text-blue-400 font-bold text-xs uppercase tracking-widest mb-1">Journal de Bord</h4>
-                                    <p class="text-slate-300 text-sm leading-relaxed italic">
-                                        "Intégrer l'ETNA a été un tournant. C'est ici que j'ai pu vraiment me plonger dans la sécurisation d'infrastructures complexes. Mon objectif actuel est de maîtriser les concepts Zero Trust pour mon Master."
-                                    </p>
+                                    <p class="text-slate-300 text-sm leading-relaxed italic">"Intégrer l'ETNA a été un tournant. C'est ici que j'ai pu vraiment me plonger dans la sécurisation d'infrastructures complexes."</p>
                                 </div>
                             </div>
                         </div>
@@ -195,15 +188,12 @@
                                 <span class="animate-pulse w-2 h-2 bg-blue-500 rounded-full inline-block"></span> Cliquer pour décrypter
                             </p>
                         </div>
-
                         <div id="story-bts" class="hidden md:absolute md:top-0 md:left-1/2 w-full md:w-1/2 mt-4 md:mt-0">
                             <div class="bg-slate-900/80 border border-slate-600 p-4 rounded-2xl backdrop-blur-md flex gap-4 items-start">
                                 <img src="profil.png" alt="Amin" class="w-10 h-10 rounded-full border-2 border-slate-500 object-cover flex-shrink-0 grayscale">
                                 <div>
                                     <h4 class="text-slate-400 font-bold text-xs uppercase tracking-widest mb-1">Journal de Bord</h4>
-                                    <p class="text-slate-300 text-sm leading-relaxed italic">
-                                        "Mes premières vraies armes en administration système. J'y ai appris à configurer des VLANs, monter des serveurs AD et comprendre la logique fondamentale des réseaux d'entreprise."
-                                    </p>
+                                    <p class="text-slate-300 text-sm leading-relaxed italic">"Mes premières vraies armes. J'y ai appris à configurer des VLANs, monter des serveurs AD et comprendre les réseaux d'entreprise."</p>
                                 </div>
                             </div>
                         </div>
@@ -219,20 +209,16 @@
                                 <span class="animate-pulse w-2 h-2 bg-blue-500 rounded-full inline-block"></span> Cliquer pour décrypter
                             </p>
                         </div>
-
                         <div id="story-bac" class="hidden md:absolute md:top-0 md:left-1/2 w-full md:w-1/2 mt-4 md:mt-0">
                             <div class="bg-slate-900/80 border border-slate-700 p-4 rounded-2xl backdrop-blur-md flex gap-4 items-start">
                                 <div class="w-10 h-10 rounded-full bg-slate-800 border-2 border-slate-600 flex items-center justify-center text-xl flex-shrink-0">🎓</div>
                                 <div>
                                     <h4 class="text-slate-400 font-bold text-xs uppercase tracking-widest mb-1">Archive Système</h4>
-                                    <p class="text-slate-300 text-sm leading-relaxed italic">
-                                        "La validation de mes fondamentaux académiques. C'est à cette période que ma passion pour l'informatique a commencé à prendre une tournure professionnelle."
-                                    </p>
+                                    <p class="text-slate-300 text-sm leading-relaxed italic">"La validation de mes fondamentaux académiques, marquant le début de mon parcours professionnel en informatique."</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
 
@@ -241,28 +227,34 @@
                     <h2 class="text-3xl font-bold tracking-tighter uppercase text-blue-500">Access_Control.auth</h2>
                     <div class="h-px flex-grow bg-slate-800"></div>
                 </div>
+
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div onclick="openExperience('imvc')" class="cursor-pointer bg-slate-900/40 border border-slate-800 p-8 rounded-[2.5rem] hover:border-blue-500/50 transition-all bento-glow group backdrop-blur-sm relative overflow-hidden">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <div class="text-blue-500 text-[10px] font-bold mb-2 tracking-[0.3em] uppercase">SOCIÉTÉ_01</div>
-                                <h3 class="text-3xl font-bold text-white mb-2 tracking-tighter">IMVC Entreprise</h3>
-                                <p class="text-slate-400 text-sm">Apprenti Admin Systèmes & Réseaux</p>
-                            </div>
-                            <div class="text-4xl grayscale group-hover:grayscale-0 transition-all">🏢</div>
+                    <div onclick="openExperience('imvc')" class="cursor-pointer bg-slate-900/40 border border-slate-800 rounded-[2.5rem] overflow-hidden hover:border-blue-500/50 transition-all bento-glow group backdrop-blur-sm">
+                        <div class="h-40 w-full overflow-hidden bg-slate-800">
+                            <img src="imvc_bg.jpg" alt="IMVC Entreprise" class="w-full h-full object-cover opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
                         </div>
-                        <div class="mt-6 flex items-center text-xs text-blue-400 font-bold group-hover:translate-x-2 transition-transform">VOIR LE BADGE D'ACCÈS →</div>
+                        <div class="p-8">
+                            <div class="text-blue-500 text-[10px] font-bold mb-2 tracking-[0.3em] uppercase">SOCIÉTÉ_01</div>
+                            <h3 class="text-3xl font-bold text-white mb-1 tracking-tighter">IMVC Entreprise</h3>
+                            <p class="text-slate-400 text-sm font-medium">Apprenti Administrateur Systèmes & Réseaux</p>
+                            <div class="mt-6 flex items-center text-xs text-blue-400 font-bold group-hover:translate-x-2 transition-transform">
+                                DÉCRYPTER LES MISSIONS <span class="ml-2">→</span>
+                            </div>
+                        </div>
                     </div>
-                    <div onclick="openExperience('coelys')" class="cursor-pointer bg-slate-900/40 border border-slate-800 p-8 rounded-[2.5rem] hover:border-emerald-500/50 transition-all bento-glow group backdrop-blur-sm relative overflow-hidden">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <div class="text-emerald-500 text-[10px] font-bold mb-2 tracking-[0.3em] uppercase">SOCIÉTÉ_02</div>
-                                <h3 class="text-3xl font-bold text-white mb-2 tracking-tighter">Coelys IT</h3>
-                                <p class="text-slate-400 text-sm">Technicien Développement & Sécurité</p>
-                            </div>
-                            <div class="text-4xl grayscale group-hover:grayscale-0 transition-all">🛠️</div>
+
+                    <div onclick="openExperience('coelys')" class="cursor-pointer bg-slate-900/40 border border-slate-800 rounded-[2.5rem] overflow-hidden hover:border-emerald-500/50 transition-all bento-glow group backdrop-blur-sm">
+                        <div class="h-40 w-full overflow-hidden bg-slate-800">
+                            <img src="coelys_bg.jpg" alt="Coelys IT" class="w-full h-full object-cover opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
                         </div>
-                        <div class="mt-6 flex items-center text-xs text-emerald-400 font-bold group-hover:translate-x-2 transition-transform">VOIR LE BADGE D'ACCÈS →</div>
+                        <div class="p-8">
+                            <div class="text-emerald-500 text-[10px] font-bold mb-2 tracking-[0.3em] uppercase">SOCIÉTÉ_02</div>
+                            <h3 class="text-3xl font-bold text-white mb-1 tracking-tighter">Coelys IT</h3>
+                            <p class="text-slate-400 text-sm font-medium">Technicien Développement & Sécurité</p>
+                            <div class="mt-6 flex items-center text-xs text-emerald-400 font-bold group-hover:translate-x-2 transition-transform">
+                                DÉCRYPTER LES MISSIONS <span class="ml-2">→</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -326,52 +318,14 @@
                 </div>
             </div>
             <button onclick="closeExperience('identite')" class="w-full bg-slate-200 py-4 text-slate-500 font-bold hover:bg-red-50 hover:text-red-600 transition-colors uppercase text-xs tracking-widest border-t border-slate-300">
-                FERMER
+                Révoquer l'accès (Fermer)
             </button>
-        </div>
-    </div>
-
-    <div class="reveal">
-        <div class="flex items-center gap-4 mb-12">
-            <h2 class="text-3xl font-bold tracking-tighter uppercase text-blue-500">Access_Control.auth</h2>
-            <div class="h-px flex-grow bg-slate-800"></div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div onclick="openExperience('imvc')" class="cursor-pointer bg-slate-900/40 border border-slate-800 rounded-[2.5rem] overflow-hidden hover:border-blue-500/50 transition-all bento-glow group backdrop-blur-sm">
-                <div class="h-40 w-full overflow-hidden bg-slate-800">
-                    <img src="imvc_bg.jpg" alt="IMVC Entreprise" class="w-full h-full object-cover opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
-                </div>
-                <div class="p-8">
-                    <div class="text-blue-500 text-[10px] font-bold mb-2 tracking-[0.3em] uppercase">SOCIÉTÉ_01</div>
-                    <h3 class="text-3xl font-bold text-white mb-1 tracking-tighter">IMVC Entreprise</h3>
-                    <p class="text-slate-400 text-sm font-medium">Apprenti Administrateur Systèmes & Réseaux</p>
-                    <div class="mt-6 flex items-center text-xs text-blue-400 font-bold group-hover:translate-x-2 transition-transform">
-                        DÉCRYPTER LES MISSIONS <span class="ml-2">→</span>
-                    </div>
-                </div>
-            </div>
-
-            <div onclick="openExperience('coelys')" class="cursor-pointer bg-slate-900/40 border border-slate-800 rounded-[2.5rem] overflow-hidden hover:border-emerald-500/50 transition-all bento-glow group backdrop-blur-sm">
-                <div class="h-40 w-full overflow-hidden bg-slate-800">
-                    <img src="coelys_bg.jpg" alt="Coelys IT" class="w-full h-full object-cover opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
-                </div>
-                <div class="p-8">
-                    <div class="text-emerald-500 text-[10px] font-bold mb-2 tracking-[0.3em] uppercase">SOCIÉTÉ_02</div>
-                        <h3 class="text-3xl font-bold text-white mb-1 tracking-tighter">Coelys IT</h3>
-                        <p class="text-slate-400 text-sm font-medium">Technicien Développement & Sécurité</p>
-                        <div class="mt-6 flex items-center text-xs text-emerald-400 font-bold group-hover:translate-x-2 transition-transform">
-                            DÉCRYPTER LES MISSIONS <span class="ml-2">→</span>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
     <div id="modal-imvc" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-6 bg-slate-950/90 backdrop-blur-md">
         <div class="bg-slate-900 border-2 border-blue-500 rounded-[3rem] max-w-lg w-full overflow-hidden relative shadow-[0_0_50px_rgba(59,130,246,0.2)]">
             <button onclick="closeExperience('imvc')" class="absolute top-6 right-8 text-slate-500 hover:text-white text-2xl z-30">✕</button>
-            
             <div class="p-10">
                 <div class="flex items-center gap-6 mb-8 border-b border-slate-800 pb-8">
                     <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center text-3xl font-bold shadow-lg">IM</div>
@@ -380,13 +334,10 @@
                         <p class="text-blue-500 text-xs font-bold tracking-widest uppercase">2024 — 2025 (Alternance)</p>
                     </div>
                 </div>
-
                 <div class="space-y-6">
                     <div>
                         <h4 class="text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-2">À propos de l'entreprise</h4>
-                        <p class="text-slate-300 text-sm leading-relaxed italic">
-                            Prestataire de services informatiques spécialisé dans l'infogérance et la maintenance d'infrastructures pour les PME.
-                        </p>
+                        <p class="text-slate-300 text-sm leading-relaxed italic">Prestataire de services informatiques spécialisé dans l'infogérance et la maintenance d'infrastructures pour les PME.</p>
                     </div>
                     <div>
                         <h4 class="text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-2">Poste occupé</h4>
@@ -405,46 +356,74 @@
         </div>
     </div>
 
+    <div id="modal-coelys" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-6 bg-slate-950/90 backdrop-blur-md">
+        <div class="bg-slate-900 border-2 border-emerald-500 rounded-[3rem] max-w-lg w-full overflow-hidden relative shadow-[0_0_50px_rgba(16,185,129,0.2)]">
+            <button onclick="closeExperience('coelys')" class="absolute top-6 right-8 text-slate-500 hover:text-white text-2xl z-30">✕</button>
+            <div class="p-10">
+                <div class="flex items-center gap-6 mb-8 border-b border-slate-800 pb-8">
+                    <div class="w-16 h-16 bg-emerald-600 rounded-2xl flex items-center justify-center text-3xl font-bold shadow-lg">CO</div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-white uppercase tracking-tighter">Coelys IT</h3>
+                        <p class="text-emerald-500 text-xs font-bold tracking-widest uppercase">2023 — 2024</p>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-2">À propos de l'entreprise</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed italic">Entreprise experte dans le développement de solutions IT sur-mesure et l'accompagnement cybersécurité.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-2">Poste occupé</h4>
+                        <p class="text-white font-bold">Technicien Développement & Sécurité</p>
+                    </div>
+                    <div>
+                        <h4 class="text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-2">Missions réalisées</h4>
+                        <ul class="text-slate-300 text-sm space-y-2">
+                            <li class="flex items-start gap-2"><span class="text-emerald-500">•</span> Automatisation de rapports via Scripting</li>
+                            <li class="flex items-start gap-2"><span class="text-emerald-500">•</span> Sensibilisation des utilisateurs aux risques Cyber</li>
+                            <li class="flex items-start gap-2"><span class="text-emerald-500">•</span> Déploiement de solutions de sécurité</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer class="py-12 text-center text-slate-600 text-[10px] uppercase tracking-[0.4em] border-t border-slate-900">© 2026 Amin Kharbach — Étudiant ETNA — Systèmes & Cybersécurité</footer>
 
     <script>
-        if (history.scrollRestoration) {
-            history.scrollRestoration = 'manual';
-        }
-        window.onbeforeunload = function () {
-            window.scrollTo(0, 0);
-        }
-        // EFFET MACHINE À ÉCRIRE (HEADER)
+        // Effet Machine à écrire
         const headerText = "Connexion sécurisée établie...";
         let headerIndex = 0;
-
         function typeHeaderWriter() {
             if (headerIndex < headerText.length) {
                 document.getElementById('typewriter-header').innerHTML += headerText.charAt(headerIndex);
                 headerIndex++;
-                setTimeout(typeHeaderWriter, 80); // Vitesse de frappe (80ms)
+                setTimeout(typeHeaderWriter, 80);
             }
         }
 
+        // Remise à zéro au rechargement
+        if (history.scrollRestoration) { history.scrollRestoration = 'manual'; }
+        window.onbeforeunload = function () { window.scrollTo(0, 0); }
+
+        // Scroll Reveal
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
-                
-                if (elementTop < windowHeight - 100) { 
-                    reveals[i].classList.add("active"); 
-                } else {
-                    reveals[i].classList.remove("active"); 
-                }
+                if (elementTop < windowHeight - 100) { reveals[i].classList.add("active"); } 
+                else { reveals[i].classList.remove("active"); }
             }
         }
         window.addEventListener("scroll", reveal);
         window.onload = function() {
             reveal();
-            setTimeout(typeHeaderWriter, 500); // Lancement après 0.5 seconde
+            setTimeout(typeHeaderWriter, 500);
         };
 
+        // Modales et Storytelling
         function openExperience(id) {
             document.getElementById('modal-' + id).classList.remove('hidden');
             document.body.style.overflow = 'hidden';
@@ -453,24 +432,21 @@
             document.getElementById('modal-' + id).classList.add('hidden');
             document.body.style.overflow = 'auto';
         }
-        window.onclick = function(event) { 
-            if (event.target.id.startsWith('modal-')) { 
-                event.target.classList.add('hidden'); 
-                document.body.style.overflow = 'auto'; 
-            } 
-        }
-        // 4. GESTION DU STORYTELLING (FRISE CHRONOLOGIQUE)
         function toggleStory(id) {
             var storyElement = document.getElementById(id);
-            // Si la bulle est cachée, on l'affiche, sinon on la cache
             if (storyElement.classList.contains('hidden')) {
                 storyElement.classList.remove('hidden');
-                // Optionnel : petite animation d'apparition
                 storyElement.classList.add('animate-pulse');
                 setTimeout(() => storyElement.classList.remove('animate-pulse'), 500);
             } else {
                 storyElement.classList.add('hidden');
             }
+        }
+        window.onclick = function(event) { 
+            if (event.target.id.startsWith('modal-')) { 
+                event.target.classList.add('hidden'); 
+                document.body.style.overflow = 'auto'; 
+            } 
         }
     </script>
 </body>
