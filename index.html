@@ -326,33 +326,81 @@
                 </div>
             </div>
             <button onclick="closeExperience('identite')" class="w-full bg-slate-200 py-4 text-slate-500 font-bold hover:bg-red-50 hover:text-red-600 transition-colors uppercase text-xs tracking-widest border-t border-slate-300">
-                Révoquer l'accès (Fermer)
+                FERMER
             </button>
         </div>
     </div>
 
-    <div id="modal-imvc" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-6 bg-slate-950/90 backdrop-blur-md">
-        <div class="bg-slate-900 border-2 border-blue-500 rounded-[3rem] max-w-lg w-full p-10 relative shadow-[0_0_50px_rgba(59,130,246,0.2)]">
-            <button onclick="closeExperience('imvc')" class="absolute top-6 right-8 text-slate-500 hover:text-white text-2xl">✕</button>
-            <div class="flex items-center gap-6 mb-8 border-b border-slate-800 pb-8 uppercase">
-                <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center text-3xl font-bold">IM</div>
-                <div><h3 class="text-2xl font-bold text-white tracking-tighter">IMVC Entreprise</h3><p class="text-blue-500 text-xs font-bold tracking-widest">Secteur : Infrastructure</p></div>
+    <div class="reveal">
+        <div class="flex items-center gap-4 mb-12">
+            <h2 class="text-3xl font-bold tracking-tighter uppercase text-blue-500">Access_Control.auth</h2>
+            <div class="h-px flex-grow bg-slate-800"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div onclick="openExperience('imvc')" class="cursor-pointer bg-slate-900/40 border border-slate-800 rounded-[2.5rem] overflow-hidden hover:border-blue-500/50 transition-all bento-glow group backdrop-blur-sm">
+                <div class="h-40 w-full overflow-hidden bg-slate-800">
+                    <img src="imvc_bg.jpg" alt="IMVC Entreprise" class="w-full h-full object-cover opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
+                </div>
+                <div class="p-8">
+                    <div class="text-blue-500 text-[10px] font-bold mb-2 tracking-[0.3em] uppercase">SOCIÉTÉ_01</div>
+                    <h3 class="text-3xl font-bold text-white mb-1 tracking-tighter">IMVC Entreprise</h3>
+                    <p class="text-slate-400 text-sm font-medium">Apprenti Administrateur Systèmes & Réseaux</p>
+                    <div class="mt-6 flex items-center text-xs text-blue-400 font-bold group-hover:translate-x-2 transition-transform">
+                        DÉCRYPTER LES MISSIONS <span class="ml-2">→</span>
+                    </div>
+                </div>
             </div>
-            <div class="space-y-6">
-                <div><h4 class="text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-2">Missions Clés</h4><ul class="text-slate-300 text-sm space-y-2"><li>• Gestion Active Directory (GPO/Utilisateurs)</li><li>• Maintenance et MCO du parc serveurs</li></ul></div>
+
+            <div onclick="openExperience('coelys')" class="cursor-pointer bg-slate-900/40 border border-slate-800 rounded-[2.5rem] overflow-hidden hover:border-emerald-500/50 transition-all bento-glow group backdrop-blur-sm">
+                <div class="h-40 w-full overflow-hidden bg-slate-800">
+                    <img src="coelys_bg.jpg" alt="Coelys IT" class="w-full h-full object-cover opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
+                </div>
+                <div class="p-8">
+                    <div class="text-emerald-500 text-[10px] font-bold mb-2 tracking-[0.3em] uppercase">SOCIÉTÉ_02</div>
+                        <h3 class="text-3xl font-bold text-white mb-1 tracking-tighter">Coelys IT</h3>
+                        <p class="text-slate-400 text-sm font-medium">Technicien Développement & Sécurité</p>
+                        <div class="mt-6 flex items-center text-xs text-emerald-400 font-bold group-hover:translate-x-2 transition-transform">
+                            DÉCRYPTER LES MISSIONS <span class="ml-2">→</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <div id="modal-coelys" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-6 bg-slate-950/90 backdrop-blur-md">
-        <div class="bg-slate-900 border-2 border-emerald-500 rounded-[3rem] max-w-lg w-full p-10 relative shadow-[0_0_50px_rgba(16,185,129,0.2)]">
-            <button onclick="closeExperience('coelys')" class="absolute top-6 right-8 text-slate-500 hover:text-white text-2xl">✕</button>
-            <div class="flex items-center gap-6 mb-8 border-b border-slate-800 pb-8 uppercase">
-                <div class="w-16 h-16 bg-emerald-600 rounded-2xl flex items-center justify-center text-3xl font-bold">CO</div>
-                <div><h3 class="text-2xl font-bold text-white tracking-tighter">Coelys IT</h3><p class="text-emerald-500 text-xs font-bold tracking-widest">Secteur : Sécurité</p></div>
-            </div>
-            <div class="space-y-6">
-                <div><h4 class="text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-2">Missions Clés</h4><ul class="text-slate-300 text-sm space-y-2"><li>• Automatisation via Scripting (Python)</li><li>• Sensibilisation aux risques Cyber</li></ul></div>
+    <div id="modal-imvc" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-6 bg-slate-950/90 backdrop-blur-md">
+        <div class="bg-slate-900 border-2 border-blue-500 rounded-[3rem] max-w-lg w-full overflow-hidden relative shadow-[0_0_50px_rgba(59,130,246,0.2)]">
+            <button onclick="closeExperience('imvc')" class="absolute top-6 right-8 text-slate-500 hover:text-white text-2xl z-30">✕</button>
+            
+            <div class="p-10">
+                <div class="flex items-center gap-6 mb-8 border-b border-slate-800 pb-8">
+                    <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center text-3xl font-bold shadow-lg">IM</div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-white uppercase tracking-tighter">IMVC Entreprise</h3>
+                        <p class="text-blue-500 text-xs font-bold tracking-widest uppercase">2024 — 2025 (Alternance)</p>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-2">À propos de l'entreprise</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed italic">
+                            Prestataire de services informatiques spécialisé dans l'infogérance et la maintenance d'infrastructures pour les PME.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-2">Poste occupé</h4>
+                        <p class="text-white font-bold">Apprenti Administrateur Systèmes & Réseaux (MCO)</p>
+                    </div>
+                    <div>
+                        <h4 class="text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-2">Missions réalisées</h4>
+                        <ul class="text-slate-300 text-sm space-y-2">
+                            <li class="flex items-start gap-2"><span class="text-blue-500">•</span> Gestion Active Directory (Utilisateurs/GPO)</li>
+                            <li class="flex items-start gap-2"><span class="text-blue-500">•</span> Maintenance et MCO du parc serveurs</li>
+                            <li class="flex items-start gap-2"><span class="text-blue-500">•</span> Configuration et sécurisation des Firewalls</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
