@@ -50,6 +50,11 @@
             animation: scanner 2s infinite linear;
         }
         .bip-effect { animation: bip-flash 1s ease-out; }
+
+        /* Styles pour le Carrousel (Cache la barre de scroll mais garde le défilement) */
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+        .scroll-smooth { scroll-behavior: smooth; }
     </style>
 </head>
 <body class="bg-slate-950 text-white scroll-smooth overflow-x-hidden">
@@ -95,6 +100,7 @@
                     </div>
                     <div class="flex justify-between items-end w-full">
                         <div class="text-blue-500 text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-widest mb-1">Scanner le badge d'accès →</div>
+                        
                         <a href="mon_cv.pdf" download="CV_Amin_Kharbach.pdf" onclick="event.stopPropagation()" class="px-4 py-2 bg-blue-600/20 text-blue-400 border border-blue-600/50 rounded-lg hover:bg-blue-600 hover:text-white transition-all text-xs font-bold uppercase tracking-widest z-10 hover:scale-105 flex items-center gap-2">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                             CV.pdf
@@ -157,11 +163,15 @@
                             <div class="text-blue-500 font-bold text-xs mb-1 tracking-widest uppercase">2025 — 2026 (EN COURS)</div>
                             <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">Bachelor Cybersécurité</h3>
                             <p class="text-slate-400 text-sm">ETNA — Ivry-sur-Seine</p>
+                            <p class="text-[10px] text-slate-500 uppercase tracking-widest mt-2 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity"><span class="animate-pulse w-2 h-2 bg-blue-500 rounded-full inline-block"></span> Cliquer pour décrypter</p>
                         </div>
                         <div id="story-bachelor" class="hidden md:absolute md:top-0 md:left-1/2 w-full md:w-1/2 mt-4 md:mt-0">
-                            <div class="bg-slate-900/80 border border-blue-500/30 p-4 rounded-2xl backdrop-blur-md flex gap-4 items-start">
+                            <div class="bg-slate-900/80 border border-blue-500/30 p-4 rounded-2xl backdrop-blur-md flex gap-4 items-start shadow-[0_0_20px_rgba(59,130,246,0.1)]">
                                 <img src="profil.png" alt="Amin" class="w-10 h-10 rounded-full border-2 border-blue-500 object-cover flex-shrink-0">
-                                <p class="text-slate-300 text-sm italic">"C'est ici que j'ai pu vraiment me plonger dans la sécurisation d'infrastructures complexes."</p>
+                                <div>
+                                    <h4 class="text-blue-400 font-bold text-xs uppercase tracking-widest mb-1">Journal de Bord</h4>
+                                    <p class="text-slate-300 text-sm italic">"C'est ici que j'ai pu vraiment me plonger dans la sécurisation d'infrastructures complexes."</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -172,11 +182,15 @@
                             <div class="text-orange-500 font-bold text-xs mb-1 tracking-widest">2024</div>
                             <h3 class="text-xl font-bold text-white group-hover:text-orange-400 transition-colors">Obtention du BAFA</h3>
                             <p class="text-slate-400 text-sm">Formation Animateur</p>
+                            <p class="text-[10px] text-slate-500 uppercase tracking-widest mt-2 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity"><span class="animate-pulse w-2 h-2 bg-orange-500 rounded-full inline-block"></span> Cliquer pour décrypter</p>
                         </div>
                         <div id="story-bafa" class="hidden md:absolute md:top-0 md:left-1/2 w-full md:w-1/2 mt-4 md:mt-0">
-                            <div class="bg-slate-900/80 border border-orange-500/30 p-4 rounded-2xl backdrop-blur-md flex gap-4 items-start">
+                            <div class="bg-slate-900/80 border border-orange-500/30 p-4 rounded-2xl backdrop-blur-md flex gap-4 items-start shadow-[0_0_20px_rgba(249,115,22,0.1)]">
                                 <img src="profil.png" alt="Amin" class="w-10 h-10 rounded-full border-2 border-orange-500 object-cover flex-shrink-0">
-                                <p class="text-slate-300 text-sm italic">"Une étape clé dans ma prise de responsabilités. Ce diplôme a forgé ma gestion de l'humain et du risque en environnement dynamique."</p>
+                                <div>
+                                    <h4 class="text-orange-400 font-bold text-xs uppercase tracking-widest mb-1">Journal de Bord</h4>
+                                    <p class="text-slate-300 text-sm italic">"Une étape clé dans ma prise de responsabilités. Ce diplôme a forgé ma gestion de l'humain et du risque en environnement dynamique."</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -187,11 +201,15 @@
                             <div class="text-slate-500 font-bold text-xs mb-1 tracking-widest uppercase">2023 — 2025</div>
                             <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">BTS SIO (Option SISR)</h3>
                             <p class="text-slate-400 text-sm">PROMEO — Beauvais</p>
+                            <p class="text-[10px] text-slate-500 uppercase tracking-widest mt-2 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity"><span class="animate-pulse w-2 h-2 bg-blue-500 rounded-full inline-block"></span> Cliquer pour décrypter</p>
                         </div>
                         <div id="story-bts" class="hidden md:absolute md:top-0 md:left-1/2 w-full md:w-1/2 mt-4 md:mt-0">
                             <div class="bg-slate-900/80 border border-slate-600 p-4 rounded-2xl backdrop-blur-md flex gap-4 items-start">
                                 <img src="profil.png" alt="Amin" class="w-10 h-10 rounded-full border-2 border-slate-500 object-cover flex-shrink-0 grayscale">
-                                <p class="text-slate-300 text-sm italic">"Mes premières vraies armes. J'y ai appris à configurer des VLANs et monter des serveurs AD."</p>
+                                <div>
+                                    <h4 class="text-slate-400 font-bold text-xs uppercase tracking-widest mb-1">Journal de Bord</h4>
+                                    <p class="text-slate-300 text-sm italic">"Mes premières vraies armes. J'y ai appris à configurer des VLANs et monter des serveurs AD."</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -202,56 +220,86 @@
                             <div class="text-slate-500 font-bold text-xs mb-1 tracking-widest uppercase">[ANNÉE_BAC]</div>
                             <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">Baccalauréat [TON_OPTION]</h3>
                             <p class="text-slate-400 text-sm">[NOM_DE_TON_LYCÉE_PRIVÉ]</p>
+                            <p class="text-[10px] text-slate-500 uppercase tracking-widest mt-2 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity"><span class="animate-pulse w-2 h-2 bg-blue-500 rounded-full inline-block"></span> Cliquer pour décrypter</p>
                         </div>
                         <div id="story-bac" class="hidden md:absolute md:top-0 md:left-1/2 w-full md:w-1/2 mt-4 md:mt-0">
                             <div class="bg-slate-900/80 border border-slate-700 p-4 rounded-2xl backdrop-blur-md flex gap-4 items-start">
                                 <div class="w-10 h-10 rounded-full bg-slate-800 border-2 border-slate-600 flex items-center justify-center text-xl flex-shrink-0">🎓</div>
-                                <p class="text-slate-300 text-sm italic">"La validation de mes fondamentaux académiques, marquant le début de mon parcours."</p>
+                                <div>
+                                    <h4 class="text-slate-400 font-bold text-xs uppercase tracking-widest mb-1">Archive Système</h4>
+                                    <p class="text-slate-300 text-sm italic">"La validation de mes fondamentaux académiques, marquant le début de mon parcours."</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="reveal">
+            <div class="reveal relative">
                 <div class="flex items-center gap-4 mb-12">
                     <h2 class="text-3xl font-bold tracking-tighter uppercase text-blue-500">Access_Control.auth</h2>
                     <div class="h-px flex-grow bg-slate-800"></div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div onclick="openExperience('imvc')" class="cursor-pointer bg-slate-900/40 border border-slate-800 rounded-[2.5rem] overflow-hidden hover:border-blue-500/50 transition-all bento-glow group backdrop-blur-sm">
-                        <div class="h-40 w-full overflow-hidden bg-slate-800">
-                            <img src="imvc_bg.jpg" alt="IMVC Entreprise" class="w-full h-full object-cover opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
-                        </div>
-                        <div class="p-8">
-                            <div class="text-blue-500 text-[10px] font-bold mb-2 tracking-[0.3em] uppercase">SOCIÉTÉ_01</div>
-                            <h3 class="text-2xl font-bold text-white mb-1 tracking-tighter uppercase">IMVC Entreprise</h3>
-                            <p class="text-slate-400 text-xs font-medium">Apprenti Admin Systèmes & Réseaux</p>
+                <div class="hidden lg:flex absolute right-0 -top-4 gap-2 z-10">
+                    <button onclick="scrollCarousel(-400)" class="w-10 h-10 flex items-center justify-center bg-slate-900 border border-slate-700 rounded-full hover:border-blue-500 hover:text-blue-500 transition-all">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    <button onclick="scrollCarousel(400)" class="w-10 h-10 flex items-center justify-center bg-slate-900 border border-slate-700 rounded-full hover:border-blue-500 hover:text-blue-500 transition-all">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                </div>
+
+                <div id="carousel-exp" class="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hide pb-8">
+                    
+                    <div class="flex-shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-center h-auto">
+                        <div onclick="openExperience('imvc')" class="cursor-pointer bg-slate-900/40 border border-slate-800 rounded-[2.5rem] overflow-hidden hover:border-blue-500/50 transition-all bento-glow group backdrop-blur-sm h-full flex flex-col">
+                            <div class="h-40 w-full overflow-hidden bg-slate-800 flex-shrink-0">
+                                <img src="imvc_bg.jpg" alt="IMVC" class="w-full h-full object-cover opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
+                            </div>
+                            <div class="p-8 flex flex-col flex-grow">
+                                <div class="text-blue-500 text-[10px] font-bold mb-2 tracking-[0.3em] uppercase">SOCIÉTÉ_01</div>
+                                <h3 class="text-2xl font-bold text-white mb-1 tracking-tighter uppercase">IMVC Entreprise</h3>
+                                <p class="text-slate-400 text-xs font-medium flex-grow">Apprenti Admin Systèmes & Réseaux</p>
+                                <div class="mt-6 flex items-center text-xs text-blue-400 font-bold group-hover:translate-x-2 transition-transform">
+                                    VOIR LE BADGE <span class="ml-2">→</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div onclick="openExperience('coelys')" class="cursor-pointer bg-slate-900/40 border border-slate-800 rounded-[2.5rem] overflow-hidden hover:border-emerald-500/50 transition-all bento-glow group backdrop-blur-sm">
-                        <div class="h-40 w-full overflow-hidden bg-slate-800">
-                            <img src="coelys_bg.jpg" alt="Coelys IT" class="w-full h-full object-cover opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
-                        </div>
-                        <div class="p-8">
-                            <div class="text-emerald-500 text-[10px] font-bold mb-2 tracking-[0.3em] uppercase">SOCIÉTÉ_02</div>
-                            <h3 class="text-2xl font-bold text-white mb-1 tracking-tighter uppercase">Coelys IT</h3>
-                            <p class="text-slate-400 text-xs font-medium">Technicien Développement & Sécurité</p>
+                    <div class="flex-shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-center h-auto">
+                        <div onclick="openExperience('coelys')" class="cursor-pointer bg-slate-900/40 border border-slate-800 rounded-[2.5rem] overflow-hidden hover:border-emerald-500/50 transition-all bento-glow group backdrop-blur-sm h-full flex flex-col">
+                            <div class="h-40 w-full overflow-hidden bg-slate-800 flex-shrink-0">
+                                <img src="coelys_bg.jpg" alt="Coelys" class="w-full h-full object-cover opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
+                            </div>
+                            <div class="p-8 flex flex-col flex-grow">
+                                <div class="text-emerald-500 text-[10px] font-bold mb-2 tracking-[0.3em] uppercase">SOCIÉTÉ_02</div>
+                                <h3 class="text-2xl font-bold text-white mb-1 tracking-tighter uppercase">Coelys IT</h3>
+                                <p class="text-slate-400 text-xs font-medium flex-grow">Technicien Développement & Sécurité</p>
+                                <div class="mt-6 flex items-center text-xs text-emerald-400 font-bold group-hover:translate-x-2 transition-transform">
+                                    VOIR LE BADGE <span class="ml-2">→</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div onclick="openExperience('pep')" class="cursor-pointer bg-slate-900/40 border border-slate-800 rounded-[2.5rem] overflow-hidden hover:border-orange-500/50 transition-all bento-glow group backdrop-blur-sm">
-                        <div class="h-40 w-full overflow-hidden bg-slate-800">
-                            <img src="bafa_bg.jpg" alt="PEP d'Alsace" class="w-full h-full object-cover opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
-                        </div>
-                        <div class="p-8">
-                            <div class="text-orange-500 text-[10px] font-bold mb-2 tracking-[0.3em] uppercase">SOCIÉTÉ_03</div>
-                            <h3 class="text-2xl font-bold text-white mb-1 tracking-tighter uppercase">PEP d'Alsace</h3>
-                            <p class="text-slate-400 text-xs font-medium">Animateur Séjours de Vacances</p>
+                    <div class="flex-shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-center h-auto">
+                        <div onclick="openExperience('pep')" class="cursor-pointer bg-slate-900/40 border border-slate-800 rounded-[2.5rem] overflow-hidden hover:border-orange-500/50 transition-all bento-glow group backdrop-blur-sm h-full flex flex-col">
+                            <div class="h-40 w-full overflow-hidden bg-slate-800 flex-shrink-0">
+                                <img src="bafa_bg.jpg" alt="PEP" class="w-full h-full object-cover opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700">
+                            </div>
+                            <div class="p-8 flex flex-col flex-grow">
+                                <div class="text-orange-500 text-[10px] font-bold mb-2 tracking-[0.3em] uppercase">SOCIÉTÉ_03</div>
+                                <h3 class="text-2xl font-bold text-white mb-1 tracking-tighter uppercase">PEP d'Alsace</h3>
+                                <p class="text-slate-400 text-xs font-medium flex-grow">Animateur Séjours de Vacances</p>
+                                <div class="mt-6 flex items-center text-xs text-orange-400 font-bold group-hover:translate-x-2 transition-transform">
+                                    VOIR LE BADGE <span class="ml-2">→</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
 
@@ -273,6 +321,7 @@
                     <div class="w-full h-full bg-slate-800/5 flex items-center justify-center text-8xl grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110">💻</div>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -314,11 +363,11 @@
             <button onclick="closeExperience('imvc')" class="absolute top-6 right-8 text-slate-500 hover:text-white text-2xl z-30">✕</button>
             <div class="p-10">
                 <div class="flex items-center gap-6 mb-8 border-b border-slate-800 pb-8 uppercase">
-                    <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center text-3xl font-bold">IM</div>
+                    <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center text-3xl font-bold shadow-lg">IM</div>
                     <div><h3 class="text-2xl font-bold text-white tracking-tighter">IMVC Entreprise</h3><p class="text-blue-500 text-xs font-bold tracking-widest uppercase">2024 — 2025 (Alternance)</p></div>
                 </div>
                 <div class="space-y-6 text-sm text-slate-300">
-                    <div><h4 class="text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-2">À propos de l'entreprise</h4><p class="italic">Prestataire spécialisé dans l'infogérance et la maintenance d'infrastructures pour PME.</p></div>
+                    <div><h4 class="text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-2">À propos</h4><p class="italic">Prestataire spécialisé dans l'infogérance et la maintenance d'infrastructures pour PME.</p></div>
                     <div><h4 class="text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-2">Missions</h4><ul class="space-y-1"><li>• Gestion Active Directory (Utilisateurs/GPO)</li><li>• Maintenance et MCO du parc serveurs</li></ul></div>
                 </div>
             </div>
@@ -330,10 +379,11 @@
             <button onclick="closeExperience('coelys')" class="absolute top-6 right-8 text-slate-500 hover:text-white text-2xl z-30">✕</button>
             <div class="p-10">
                 <div class="flex items-center gap-6 mb-8 border-b border-slate-800 pb-8 uppercase">
-                    <div class="w-16 h-16 bg-emerald-600 rounded-2xl flex items-center justify-center text-3xl font-bold">CO</div>
+                    <div class="w-16 h-16 bg-emerald-600 rounded-2xl flex items-center justify-center text-3xl font-bold shadow-lg">CO</div>
                     <div><h3 class="text-2xl font-bold text-white tracking-tighter">Coelys IT</h3><p class="text-emerald-500 text-xs font-bold tracking-widest uppercase">2023 — 2024</p></div>
                 </div>
                 <div class="space-y-6 text-sm text-slate-300">
+                    <div><h4 class="text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-2">À propos</h4><p class="italic">Experte en solutions IT sur-mesure et accompagnement cybersécurité.</p></div>
                     <div><h4 class="text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-2">Missions</h4><ul class="space-y-1"><li>• Automatisation de rapports via Scripting</li><li>• Sensibilisation aux risques Cyber</li></ul></div>
                 </div>
             </div>
@@ -345,12 +395,12 @@
             <button onclick="closeExperience('pep')" class="absolute top-6 right-8 text-slate-500 hover:text-white text-2xl z-30">✕</button>
             <div class="p-10">
                 <div class="flex items-center gap-6 mb-8 border-b border-slate-800 pb-8 uppercase">
-                    <div class="w-16 h-16 bg-orange-600 rounded-2xl flex items-center justify-center text-3xl font-bold">PA</div>
+                    <div class="w-16 h-16 bg-orange-600 rounded-2xl flex items-center justify-center text-3xl font-bold shadow-lg">PA</div>
                     <div><h3 class="text-2xl font-bold text-white tracking-tighter">PEP d'Alsace</h3><p class="text-orange-500 text-xs font-bold tracking-widest uppercase">Juillet — Août 2023</p></div>
                 </div>
                 <div class="space-y-6 text-sm text-slate-300 leading-relaxed">
-                    <div><h4 class="text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-2">À propos</h4><p class="italic">Association d'utilité publique engagée pour le droit aux vacances et à l'éducation pour tous.</p></div>
-                    <div><h4 class="text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-2">Missions réalisées</h4><ul class="space-y-2"><li>• Encadrement d'un groupe de 12 enfants (vie quotidienne).</li><li>• Organisation et animation d'activités en plein air.</li><li>• Gestion de la sécurité lors de sorties en lieux publics.</li></ul></div>
+                    <div><h4 class="text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-2">À propos</h4><p class="italic">Association d'utilité publique engagée pour le droit aux vacances pour tous.</p></div>
+                    <div><h4 class="text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-2">Missions</h4><ul class="space-y-2"><li>• Encadrement d'un groupe de 12 enfants.</li><li>• Organisation et animation d'activités en plein air.</li><li>• Gestion de la sécurité lors de sorties publiques.</li></ul></div>
                 </div>
             </div>
         </div>
@@ -404,6 +454,10 @@
             } else {
                 storyElement.classList.add('hidden');
             }
+        }
+        function scrollCarousel(distance) {
+            const carousel = document.getElementById('carousel-exp');
+            carousel.scrollBy({ left: distance, behavior: 'smooth' });
         }
         window.onclick = function(event) { 
             if (event.target.id.startsWith('modal-')) { 
