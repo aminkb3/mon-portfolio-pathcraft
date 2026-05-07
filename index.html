@@ -155,25 +155,82 @@
                     <h2 class="text-3xl font-bold tracking-tighter uppercase text-blue-500">System_History.log</h2>
                     <div class="h-px flex-grow bg-slate-800"></div>
                 </div>
+                
                 <div class="relative border-l-2 border-slate-800 ml-4 md:ml-10 space-y-12 pb-10">
-                    <div class="relative pl-8 group">
-                        <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-slate-950 border-2 border-blue-500 group-hover:scale-150 transition-transform"></div>
-                        <div class="text-blue-500 font-bold text-xs mb-1 tracking-widest">2025 — 2026 (EN COURS)</div>
-                        <h3 class="text-xl font-bold text-white">Bachelor Cybersécurité</h3>
-                        <p class="text-slate-400">ETNA — Ivry-sur-Seine</p>
+                    
+                    <div class="relative pl-8 group cursor-pointer" onclick="toggleStory('story-bachelor')">
+                        <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-slate-950 border-2 border-blue-500 group-hover:scale-150 group-hover:bg-blue-500 transition-all"></div>
+                        
+                        <div class="md:w-1/2 pr-4">
+                            <div class="text-blue-500 font-bold text-xs mb-1 tracking-widest">2025 — 2026 (EN COURS)</div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">Bachelor Cybersécurité</h3>
+                            <p class="text-slate-400 text-sm">ETNA — Ivry-sur-Seine</p>
+                            <p class="text-[10px] text-slate-500 uppercase tracking-widest mt-2 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <span class="animate-pulse w-2 h-2 bg-blue-500 rounded-full inline-block"></span> Cliquer pour décrypter
+                            </p>
+                        </div>
+
+                        <div id="story-bachelor" class="hidden md:absolute md:top-0 md:left-1/2 w-full md:w-1/2 mt-4 md:mt-0">
+                            <div class="bg-slate-900/80 border border-blue-500/30 p-4 rounded-2xl backdrop-blur-md shadow-[0_0_20px_rgba(59,130,246,0.1)] flex gap-4 items-start">
+                                <img src="profil.png" alt="Amin" class="w-10 h-10 rounded-full border-2 border-blue-500 object-cover flex-shrink-0">
+                                <div>
+                                    <h4 class="text-blue-400 font-bold text-xs uppercase tracking-widest mb-1">Journal de Bord</h4>
+                                    <p class="text-slate-300 text-sm leading-relaxed italic">
+                                        "Intégrer l'ETNA a été un tournant. C'est ici que j'ai pu vraiment me plonger dans la sécurisation d'infrastructures complexes. Mon objectif actuel est de maîtriser les concepts Zero Trust pour mon Master."
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="relative pl-8 group">
-                        <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-slate-950 border-2 border-slate-700 group-hover:border-blue-400 group-hover:scale-150 transition-all"></div>
-                        <div class="text-slate-500 font-bold text-xs mb-1 tracking-widest uppercase">2023 — 2025</div>
-                        <h3 class="text-xl font-bold text-white">BTS SIO (Option SISR)</h3>
-                        <p class="text-slate-400">PROMEO — Beauvais</p>
+
+                    <div class="relative pl-8 group cursor-pointer" onclick="toggleStory('story-bts')">
+                        <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-slate-950 border-2 border-slate-700 group-hover:border-blue-400 group-hover:scale-150 group-hover:bg-blue-900 transition-all"></div>
+                        <div class="md:w-1/2 pr-4">
+                            <div class="text-slate-500 font-bold text-xs mb-1 tracking-widest uppercase">2023 — 2025</div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">BTS SIO (Option SISR)</h3>
+                            <p class="text-slate-400 text-sm">PROMEO — Beauvais</p>
+                            <p class="text-[10px] text-slate-500 uppercase tracking-widest mt-2 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <span class="animate-pulse w-2 h-2 bg-blue-500 rounded-full inline-block"></span> Cliquer pour décrypter
+                            </p>
+                        </div>
+
+                        <div id="story-bts" class="hidden md:absolute md:top-0 md:left-1/2 w-full md:w-1/2 mt-4 md:mt-0">
+                            <div class="bg-slate-900/80 border border-slate-600 p-4 rounded-2xl backdrop-blur-md flex gap-4 items-start">
+                                <img src="profil.png" alt="Amin" class="w-10 h-10 rounded-full border-2 border-slate-500 object-cover flex-shrink-0 grayscale">
+                                <div>
+                                    <h4 class="text-slate-400 font-bold text-xs uppercase tracking-widest mb-1">Journal de Bord</h4>
+                                    <p class="text-slate-300 text-sm leading-relaxed italic">
+                                        "Mes premières vraies armes en administration système. J'y ai appris à configurer des VLANs, monter des serveurs AD et comprendre la logique fondamentale des réseaux d'entreprise."
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="relative pl-8 group">
+
+                    <div class="relative pl-8 group cursor-pointer" onclick="toggleStory('story-bac')">
                         <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-slate-950 border-2 border-slate-800 group-hover:border-blue-400 group-hover:scale-150 transition-all"></div>
-                        <div class="text-slate-500 font-bold text-xs mb-1 tracking-widest uppercase">[ANNÉE_BAC]</div>
-                        <h3 class="text-xl font-bold text-white">Baccalauréat [TON_OPTION]</h3>
-                        <p class="text-slate-400">[NOM_DE_TON_LYCÉE_PRIVÉ]</p>
+                        <div class="md:w-1/2 pr-4">
+                            <div class="text-slate-500 font-bold text-xs mb-1 tracking-widest uppercase">[ANNÉE_BAC]</div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">Baccalauréat [TON_OPTION]</h3>
+                            <p class="text-slate-400 text-sm">[NOM_DE_TON_LYCÉE_PRIVÉ]</p>
+                            <p class="text-[10px] text-slate-500 uppercase tracking-widest mt-2 flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <span class="animate-pulse w-2 h-2 bg-blue-500 rounded-full inline-block"></span> Cliquer pour décrypter
+                            </p>
+                        </div>
+
+                        <div id="story-bac" class="hidden md:absolute md:top-0 md:left-1/2 w-full md:w-1/2 mt-4 md:mt-0">
+                            <div class="bg-slate-900/80 border border-slate-700 p-4 rounded-2xl backdrop-blur-md flex gap-4 items-start">
+                                <div class="w-10 h-10 rounded-full bg-slate-800 border-2 border-slate-600 flex items-center justify-center text-xl flex-shrink-0">🎓</div>
+                                <div>
+                                    <h4 class="text-slate-400 font-bold text-xs uppercase tracking-widest mb-1">Archive Système</h4>
+                                    <p class="text-slate-300 text-sm leading-relaxed italic">
+                                        "La validation de mes fondamentaux académiques. C'est à cette période que ma passion pour l'informatique a commencé à prendre une tournure professionnelle."
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
             </div>
 
@@ -337,6 +394,19 @@
                 event.target.classList.add('hidden'); 
                 document.body.style.overflow = 'auto'; 
             } 
+        }
+        // 4. GESTION DU STORYTELLING (FRISE CHRONOLOGIQUE)
+        function toggleStory(id) {
+            var storyElement = document.getElementById(id);
+            // Si la bulle est cachée, on l'affiche, sinon on la cache
+            if (storyElement.classList.contains('hidden')) {
+                storyElement.classList.remove('hidden');
+                // Optionnel : petite animation d'apparition
+                storyElement.classList.add('animate-pulse');
+                setTimeout(() => storyElement.classList.remove('animate-pulse'), 500);
+            } else {
+                storyElement.classList.add('hidden');
+            }
         }
     </script>
 </body>
