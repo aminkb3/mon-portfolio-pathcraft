@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Amin Kharbach | Portfolio Cyber-Security v1.4</title>
+    <title>Amin Kharbach | Portfolio Cyber-Security v1.5</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap');
         body { font-family: 'Space Grotesk', sans-serif; }
@@ -57,7 +57,13 @@
 <body class="bg-slate-950 text-white scroll-smooth overflow-x-hidden">
 
     <section id="accueil" class="h-screen w-full flex flex-col items-center justify-center relative bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/20 via-slate-950 to-slate-950">
-        <div class="absolute top-10 left-10 text-blue-500 font-bold tracking-tighter text-xl">AK_SYSTEMS.v1.4</div>
+        
+        <div class="absolute top-10 left-6 md:left-10 text-blue-500 font-bold tracking-tighter text-xl">AK_SYSTEMS.v1.5</div>
+        
+        <a href="https://www.linkedin.com/in/ton-profil" target="_blank" class="absolute top-10 right-6 md:right-10 flex items-center gap-2 px-4 py-2 bg-blue-600/10 text-blue-400 border border-blue-500/30 rounded-full hover:bg-blue-600 hover:text-white transition-all text-xs font-bold tracking-widest uppercase backdrop-blur-sm z-50">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            <span class="hidden md:inline">LinkedIn</span>
+        </a>
 
         <div class="flex flex-col items-center z-10 text-center px-4">
             <div class="mb-8 perspective-1000">
@@ -80,13 +86,25 @@
 
             <div class="reveal grid grid-cols-1 md:grid-cols-2 gap-6">
                 
-                <div onclick="openExperience('identite')" class="bg-slate-900/40 border border-slate-800 rounded-[2.5rem] p-8 md:p-10 flex flex-col justify-start bento-glow group backdrop-blur-sm cursor-pointer hover:border-blue-500/50 transition-all">
-                    <div class="text-blue-500 mb-6 font-bold text-sm tracking-widest uppercase">01_IDENTITÉ</div>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Missions & Vision</h2>
-                    <p class="text-slate-400 leading-relaxed text-base md:text-lg mb-6">
-                        Étudiant à l'ETNA, je transforme la complexité technique en infrastructures résilientes. Mon expertise s'étend de l'administration système à la sécurisation offensive et défensive.
-                    </p>
-                    <div class="text-blue-500 text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-widest">Scanner le badge d'accès →</div>
+                <div onclick="openExperience('identite')" class="bg-slate-900/40 border border-slate-800 rounded-[2.5rem] p-8 md:p-10 flex flex-col justify-between bento-glow group backdrop-blur-sm cursor-pointer hover:border-blue-500/50 transition-all relative">
+                    <div>
+                        <div class="text-blue-500 mb-6 font-bold text-sm tracking-widest uppercase">01_IDENTITÉ</div>
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Missions & Vision</h2>
+                        <p class="text-slate-400 leading-relaxed text-base md:text-lg mb-8">
+                            Étudiant à l'ETNA, je transforme la complexité technique en infrastructures résilientes. Mon expertise s'étend de l'administration système à la sécurisation offensive et défensive.
+                        </p>
+                    </div>
+                    
+                    <div class="flex justify-between items-end w-full">
+                        <div class="text-blue-500 text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-widest mb-1">
+                            Scanner le badge d'accès →
+                        </div>
+                        
+                        <a href="mon_cv.pdf" download="CV_Amin_Kharbach.pdf" onclick="event.stopPropagation()" class="px-4 py-2 bg-blue-600/20 text-blue-400 border border-blue-600/50 rounded-lg hover:bg-blue-600 hover:text-white transition-all text-xs font-bold uppercase tracking-widest z-10 hover:scale-105 flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                            CV.pdf
+                        </a>
+                    </div>
                 </div>
 
                 <div class="bg-slate-900/40 border border-slate-800 rounded-[2.5rem] p-8 md:p-10 bento-glow group backdrop-blur-sm">
@@ -283,7 +301,6 @@
     <footer class="py-12 text-center text-slate-600 text-[10px] uppercase tracking-[0.4em] border-t border-slate-900">© 2026 Amin Kharbach — Étudiant ETNA — Systèmes & Cybersécurité</footer>
 
     <script>
-        // 1. FORCER LE RETOUR EN HAUT AU RECHARGEMENT
         if (history.scrollRestoration) {
             history.scrollRestoration = 'manual';
         }
@@ -291,7 +308,6 @@
             window.scrollTo(0, 0);
         }
 
-        // 2. GESTION DU SCROLL REVEAL (ALLER-RETOUR)
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
@@ -301,7 +317,6 @@
                 if (elementTop < windowHeight - 100) { 
                     reveals[i].classList.add("active"); 
                 } else {
-                    // Cette ligne enlève la classe quand on remonte, permettant de rejouer l'animation
                     reveals[i].classList.remove("active"); 
                 }
             }
@@ -309,7 +324,6 @@
         window.addEventListener("scroll", reveal);
         window.onload = reveal;
 
-        // 3. GESTION DES MODALES
         function openExperience(id) {
             document.getElementById('modal-' + id).classList.remove('hidden');
             document.body.style.overflow = 'hidden';
